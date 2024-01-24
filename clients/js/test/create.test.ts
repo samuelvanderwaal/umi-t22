@@ -46,7 +46,7 @@ test('it can create new accounts', async (t) => {
     name: 'My Programmable NFT',
     uri: 'https://example.com/my-programmable-nft.json',
     sellerFeeBasisPoints: percentAmount(5.5),
-    // splTokenProgram: SPL_TOKEN_2022_PROGRAM_ID,
+    splTokenProgram: SPL_TOKEN_2022_PROGRAM_ID,
     tokenStandard: TokenStandard.NonFungible,
   }).sendAndConfirm(umi);
 
@@ -67,7 +67,7 @@ test('it can create new accounts', async (t) => {
     authority: umi.identity,
     amount: 1,
     tokenOwner: umi.identity.publicKey,
-    // splTokenProgram: SPL_TOKEN_2022_PROGRAM_ID,
+    splTokenProgram: SPL_TOKEN_2022_PROGRAM_ID,
     tokenStandard: TokenStandard.NonFungible,
   }).sendAndConfirm(umi);
 
