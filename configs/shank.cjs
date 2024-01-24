@@ -7,9 +7,9 @@ const programDir = path.join(__dirname, "..", "programs");
 
 generateIdl({
   generator: "shank",
-  programName: "mpl_project_name_program",
+  programName: "umi_t22_program",
   programId: "MyProgram1111111111111111111111111111111111",
   idlDir,
   binaryInstallDir,
-  programDir: path.join(programDir, "mpl-project-name"),
+  programDir: path.join(programDir, "umi-t22"),
 });

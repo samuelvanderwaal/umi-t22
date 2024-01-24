@@ -12,23 +12,20 @@ import {
   Program,
   PublicKey,
 } from '@metaplex-foundation/umi';
-import {
-  getMplProjectNameErrorFromCode,
-  getMplProjectNameErrorFromName,
-} from '../errors';
+import { getUmiT22ErrorFromCode, getUmiT22ErrorFromName } from '../errors';
 
-export const MPL_PROJECT_NAME_PROGRAM_ID =
+export const UMI_T22_PROGRAM_ID =
   'MyProgram1111111111111111111111111111111111' as PublicKey<'MyProgram1111111111111111111111111111111111'>;
 
-export function createMplProjectNameProgram(): Program {
+export function createUmiT22Program(): Program {
   return {
-    name: 'mplProjectName',
-    publicKey: MPL_PROJECT_NAME_PROGRAM_ID,
+    name: 'umiT22',
+    publicKey: UMI_T22_PROGRAM_ID,
     getErrorFromCode(code: number, cause?: Error) {
-      return getMplProjectNameErrorFromCode(code, this, cause);
+      return getUmiT22ErrorFromCode(code, this, cause);
     },
     getErrorFromName(name: string, cause?: Error) {
-      return getMplProjectNameErrorFromName(name, this, cause);
+      return getUmiT22ErrorFromName(name, this, cause);
     },
     isOnCluster() {
       return true;
@@ -36,20 +33,20 @@ export function createMplProjectNameProgram(): Program {
   };
 }
 
-export function getMplProjectNameProgram<T extends Program = Program>(
+export function getUmiT22Program<T extends Program = Program>(
   context: Pick<Context, 'programs'>,
   clusterFilter?: ClusterFilter
 ): T {
-  return context.programs.get<T>('mplProjectName', clusterFilter);
+  return context.programs.get<T>('umiT22', clusterFilter);
 }
 
-export function getMplProjectNameProgramId(
+export function getUmiT22ProgramId(
   context: Pick<Context, 'programs'>,
   clusterFilter?: ClusterFilter
 ): PublicKey {
   return context.programs.getPublicKey(
-    'mplProjectName',
-    MPL_PROJECT_NAME_PROGRAM_ID,
+    'umiT22',
+    UMI_T22_PROGRAM_ID,
     clusterFilter
   );
 }
